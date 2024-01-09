@@ -17,13 +17,23 @@
                 exact-active-class="bg-gray-900 text-white"
                 >Home</router-link
               >
+              <a
+                v-if="route.name === 'Details'"
+                class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium bg-gray-900"
+                >Details</a
+              >
             </div>
           </div>
         </div>
       </div>
     </div>
   </nav>
-  <main class="flex justify-center">
+  <main>
     <router-view />
   </main>
 </template>
+<script setup lang="ts">
+import { useRoute } from 'vue-router'
+
+const route = useRoute()
+</script>
